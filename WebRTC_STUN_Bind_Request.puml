@@ -1,0 +1,121 @@
+@startuml
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+
+' skinparam monochrome true
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+'/'
+skinparam DefaultFontName Consolas
+' skinparam DefaultTextAlignment center
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+    ' FontStyle bold
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+    ' BorderThickness 4
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+   ' BorderColor red
+   ' BackgroundColor Aqua-CadetBlue
+}
+'/
+
+title WebRTC发送与接收STUN_Bind_Request
+
+start
+
+partition 发送STUN_Bind_Request {
+
+:UDPPort::OnLocalAddressReady]
+
+:UDPPort::MaybePrepareStunCandidate]
+
+:UDPPort::SendStunBindingRequest]
+
+:StunRequestManager::SendDelayed]
+
+-[dotted]->发送请求，接收消息;
+
+:StunRequest::OnMessage]
+
+-[dashed]->(sigslot)SignalSendPacket;
+
+:UDPPort::OnSendPacket]
+
+:AsyncUDPSocket::SendTo]
+
+:PhysicalSocket::SendTo]
+
+:系统Socket的SendTo]
+
+}
+
+(+)
+
+partition 接收STUN_Bind_Request {
+
+:PhysicalSocketServer::Wait]
+
+:PhysicalSocketServer::WaitSelect]
+
+:ProcessEvents]
+
+:SocketDispatcher::OnPreEvent]
+
+:SocketDispatcher::OnEvent]
+
+:AsyncUDPSocket::OnReadEvent]
+
+:AllocationSequence::OnReadPacket]
+
+:UDPPort::HandleIncomingPacket]
+
+:UDPPort::OnReadPacket]
+
+:StunRequestManager::CheckResponse]
+
+:StunBindingRequest::OnResponse]
+
+:UDPPort::OnStunBindingRequestSucceeded]
+
+:Port::AddAddress]
+
+:Port::FinishAddingAddress]
+
+-[dashed]->(sigslot)SignalCandidateReady;
+
+:BasicPortAllocatorSession::OnCandidateReady]
+
+}
+
+stop
+
+ 
+@enduml

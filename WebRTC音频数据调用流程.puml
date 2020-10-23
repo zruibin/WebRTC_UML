@@ -1,0 +1,230 @@
+@startuml
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+
+' skinparam monochrome true
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+'/'
+skinparam DefaultFontName Consolas
+' skinparam DefaultTextAlignment center
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+    ' FontStyle bold
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+    ' BorderThickness 4
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+   ' BorderColor red
+   ' BackgroundColor Aqua-CadetBlue
+}
+'/
+
+title WebRTC音频数据调用流程
+
+start
+-[#red]->发送;
+fork
+' start iOS
+-[#red]->iOS;
+:VoiceProcessingAudioUnit::OnDeliverRecordedData]
+:VoiceProcessingAudioUnit::NotifyDeliverRecordedData]
+->oberver_;
+:AudioDeviceIOS::OnDeliverRecordedData]
+->fine_audio_buffer_;
+:FineAudioBuffer::DeliverRecordedData]
+->audio_device_buffer_;
+' stop iOS
+fork again
+' start Android
+-[#red]->Android;
+:AudioRecordThread run]
+:WebRtcAudioRecord nativeDataIsRecorded]
+->JNI;
+:Java_org_webrtc_audio_WebRtcAudioRecord_nativeDataIsRecorded]
+->nativeAudioRecordJni;
+:AudioRecordJni::DataIsRecorded]
+->audio_device_buffer_;
+' stop Android
+fork again
+' start macOS
+-[#red]->macOS;
+:AudioDeviceMac::deviceIOProc]
+:AudioDeviceMac::implInDeviceIOProc]
+-[dashed]->_paCaptureBuffer;
+:AudioDeviceMac::implInConverterProc]
+-[dashed]->capture_worker_thread_;
+:AudioDeviceMac::DeliverRecordedData]
+->_ptrAudioBuffer;
+' stop macOS
+fork again
+' start Windows
+-[#red]->Windows;
+:AudioDeviceWindowsCore::
+DoCaptureThreadPollDMO]
+->_ptrAudioBuffer;
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:AudioDeviceLinuxPulse::
+RecThreadProcess]
+->_ptrAudioBuffer;
+' stop Linux
+end fork
+
+
+:AudioDeviceBuffer::DeliverRecordedData]
+->audio_transport_cb_;
+:AudioTransportImp::RecodrdedDataIsAvailable]
+->sending_streams_;
+:AudioSendStream::SendAudioData]
+->channel_send_;
+:ChannelSend::ProcessAndEncodeAudio]
+-[dotted]->encoder_queue_;
+(+)
+->audio_coding_;
+:AudioCodingModuleImpl::Add10MsData]
+:AudioCodingModuleImpl::Encode]
+->encoder_stack_;
+:AudioEncder::Encode]
+->this;
+:AudioEncoderOpusImpl::EncodeImpl]
+fork
+#bac0c1:WebRtcOus_Encode]
+end fork
+:AudioCodingModuleImpl::Encode]
+->packetizarion_callback_;
+:ChannelSend::SendData]
+:ChannelSend::SendRtpAudio]
+->rtp_sender_audio_;
+:RTPSenderAudio::SendAudio]
+fork
+->发送;
+#AAAAAA:RTP & Network layer]
+detach
+end fork
+
+stop
+
+
+
+start
+-[#red]->接收;
+fork
+' start iOS
+-[#red]->iOS;
+(+)
+:VoiceProcessingAudioUnit::OnGetPlayoutData]
+:VoiceProcessingAudioUnit::NotifyGetPlayoutData]
+->observer_;
+:AudioDeviceIOS::OnGetPlayoutData]
+->fine_audio_buffer_;
+:FineAudioBuffer::GetPlayoutData]
+->audio_device_buffer_;
+' stop iOS
+fork again
+' start Android
+-[#red]->Android;
+(+)
+:AudioTrackThread run]
+:WebRtcAudioTrack nativeGetPlayoutData]
+->JNI;
+:Java_org_webrtc_audio_WebRtcAudioTrack_nativeGetPlayoutData]
+->nativeAudioTrackJni;
+:AudioTrackJni::GetPlayoutData]
+->audio_device_buffer_;
+' stop Android
+fork again
+' start macOS
+-[#red]->macOS;
+(+)
+:AudioDeviceMac::deviceIOProc]
+:AudioDeviceMac::implDeviceIOProc]
+-[dashed]->_paRenderBuffer;
+:AudioDeviceMac::implOutConverterProc]
+-[dashed]->render_worker_thread_;
+:AudioDeviceMac::RenderWorkerThread]
+->_ptrAudioBuffer;
+' stop macOS
+fork again
+' start Windows
+-[#red]->Windows;
+(+)
+:AudioDeviceWindowsCore::
+DoRenderThread]
+->_ptrAudioBuffer;
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+(+)
+:AudioDeviceLinuxPulse::
+PlayThreadProcess]
+->_ptrAudioBuffer;
+' stop Linux
+end fork
+
+:AudioDeviceBuffer::RequestPlayoutData]
+->audio_transport_cb_;
+:AudioTransportImpl::NeedMorePlayData]
+->mixer_;
+:AudioMixerImpl::Mix]
+:AudioMixerImpl::GetAudioFromSource]
+->audio_source;
+:AudioReceiveStream::GetAudioFrameWithInfo]
+->channel_receive_;
+:ChannelReceive::GetAudioFrameWithInfo]
+->acm_receiver_;
+:AcmReceiver::GetAudio]
+->neteq_;
+:NetEqImpl::DecodeLoop]
+->frame;
+:OpusFrame::Decode]
+->decoder_;
+:AudioDecoder::Decode]
+->this;
+:AudioDecoderOpusImpl::DecodeInternal]
+
+fork
+#bac0c1:WebRtcOpus_Decode]
+:NetEqImpl::DecodeLoop]
+-[dotted]->NetEQ;
+:AcmReceiver::InsertPacket]
+end fork
+fork
+->接收;
+#AAAAAA:RTP & Network layer]
+detach
+end fork
+
+stop
+
+@enduml

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2510px" preserveAspectRatio="none" style="width:1402px;height:2510px;" version="1.1" viewBox="0 0 1402 2510" width="1402px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="38.1016" rx="5" ry="5" style="stroke: #000000; stroke-width: 1.0;" width="190" x="604.5" y="12"/><text fill="#000000" font-family="Consolas" font-size="24" lengthAdjust="spacingAndGlyphs" textLength="174" x="612.5" y="38.9258">WebRTC初化流程</text><ellipse cx="747" cy="63.1016" fill="#000000" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#FFFFFF" height="634.2813" style="stroke: #BAC0C1; stroke-width: 2.0;" width="609" x="512" y="83.1016"/><path d="M720,83.1016 L720,94.8359 L710,104.8359 L512,104.8359 " fill="none" style="stroke: #BAC0C1; stroke-width: 2.0;"/><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="198" x="515" y="98.7188">Factory_Initialization</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="260" x="617" y="121.8359"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="240" x="627" y="148.2803">RTCPeerConnectionFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="150" x="672" y="182.9121"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="130" x="682" y="209.3564">nativeFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="360" x="567" y="272.7227"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="340" x="577" y="299.167">CreateModularPeerConnectionFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="360" x="567" y="362.5332"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="340" x="577" y="388.9775">PeerConnectionFactoryProxy::Create</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="138" x="678" y="452.3438"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="118" x="688" y="478.7881">宏(Internal)</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="310" x="592" y="542.1543"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="602" y="568.5986">webrtc::PeerConnectionFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="130" x="682" y="603.2305"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="110" x="692" y="629.6748">MethodCall0</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="450" x="522" y="664.3066"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="430" x="532" y="690.751">webrtc::PeerConnectionFactory::Initialize()</text><ellipse cx="747" cy="747.3828" fill="#FFFFFF" rx="10" ry="10" style="stroke: #66696B; stroke-width: 2.0;"/><path d="M751.1582,748.2607 L747.7041,748.2607 L747.7041,751.8467 L746.1924,751.8467 L746.1924,748.2607 L742.7383,748.2607 L742.7383,746.9248 L746.1924,746.9248 L746.1924,743.3652 L747.7041,743.3652 L747.7041,746.9248 L751.1582,746.9248 Z "/><rect fill="#FFFFFF" height="393.584" style="stroke: #BAC0C1; stroke-width: 2.0;" width="502" x="502" y="767.3828"/><path d="M710,767.3828 L710,779.1172 L700,789.1172 L502,789.1172 " fill="none" style="stroke: #BAC0C1; stroke-width: 2.0;"/><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="198" x="505" y="783">RtcEventLog_Initialize</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="310" x="592" y="806.1172"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="602" y="832.5615">webrtc::PeerConnectionFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="210" x="642" y="895.9277"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="190" x="652" y="922.3721">CreateRtcEventLog_w</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="280" x="607" y="957.0039"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="260" x="617" y="983.4482">webrtc::RtcEventLogFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="470" x="512" y="1046.8145"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="450" x="522" y="1073.2588">webrtc::RtcEventLogFactory::CreateRtcEventLog</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="602" y="1107.8906"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="612" y="1134.335">webrtc::RtcEventLog::Create</text><ellipse cx="747" cy="1190.9668" fill="#FFFFFF" rx="10" ry="10" style="stroke: #66696B; stroke-width: 2.0;"/><path d="M751.1582,1191.8447 L747.7041,1191.8447 L747.7041,1195.4307 L746.1924,1195.4307 L746.1924,1191.8447 L742.7383,1191.8447 L742.7383,1190.5088 L746.1924,1190.5088 L746.1924,1186.9492 L747.7041,1186.9492 L747.7041,1190.5088 L751.1582,1190.5088 Z "/><rect fill="#FFFFFF" height="451.0527" style="stroke: #BAC0C1; stroke-width: 2.0;" width="377" x="582" y="1210.9668"/><path d="M727,1210.9668 L727,1222.7012 L717,1232.7012 L582,1232.7012 " fill="none" style="stroke: #BAC0C1; stroke-width: 2.0;"/><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="135" x="585" y="1226.584">Call_Initialize</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="310" x="592" y="1249.7012"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="602" y="1276.1455">webrtc::PeerConnectionFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="140" x="677" y="1339.5117"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="120" x="687" y="1365.9561">CreateCall_w</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="210" x="642" y="1429.3223"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="190" x="652" y="1455.7666">webrtc::CallFactory</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="250" x="622" y="1519.1328"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="230" x="632" y="1545.5771">CallFactory::CreateCall</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="140" x="677" y="1608.9434"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="120" x="687" y="1635.3877">Call::Create</text><ellipse cx="747" cy="1692.0195" fill="#FFFFFF" rx="10" ry="10" style="stroke: #66696B; stroke-width: 2.0;"/><path d="M751.1582,1692.8975 L747.7041,1692.8975 L747.7041,1696.4834 L746.1924,1696.4834 L746.1924,1692.8975 L742.7383,1692.8975 L742.7383,1691.5615 L746.1924,1691.5615 L746.1924,1688.002 L747.7041,1688.002 L747.7041,1691.5615 L751.1582,1691.5615 Z "/><rect fill="#FFFFFF" height="745.9297" style="stroke: #BAC0C1; stroke-width: 2.0;" width="1380" x="11" y="1712.0195"/><path d="M246,1712.0195 L246,1723.7539 L236,1733.7539 L11,1733.7539 " fill="none" style="stroke: #BAC0C1; stroke-width: 2.0;"/><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="225" x="14" y="1727.6367">PeerConnection_Initialize</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="800" x="347" y="1750.7539"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="780" x="357" y="1777.1982">RTCPeerConnectionFactory(peerConnectionWithConfiguration:constraints:delegate)</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="190" x="652" y="1811.8301"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="170" x="662" y="1838.2744">RTCPeerConnection</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="530" x="482" y="1920.375"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="510" x="492" y="1946.8193">webrtc::PeerConnectionFactory::CreatePeerConnection</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="240" x="627" y="2010.1855"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="220" x="637" y="2036.6299">webrtc::PeerConnection</text><path d="M21,2061.2617 L21,2445.9492 A0,0 0 0 0 21,2445.9492 L587,2445.9492 A0,0 0 0 0 587,2445.9492 L587,2257.6055 L607,2253.6055 L587,2249.6055 L587,2071.2617 L577,2061.2617 L21,2061.2617 A0,0 0 0 0 21,2061.2617 " fill="#FFFFFF" style="stroke: #66696B; stroke-width: 1.0;"/><path d="M577,2061.2617 L577,2071.2617 L587,2071.2617 L577,2061.2617 " fill="#FFFFFF" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="367" x="27" y="2080.8789">1、ValidateConfigureation-&gt;configureation</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="169" x="54" y="2099.6133">检查全局参数的有效性;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="276" x="27" y="2118.3477">2、allocatior与observer不可为空;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="425" x="27" y="2137.082">3、为成员赋值(observer_、async_resolver_factory、</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="331" x="54" y="2155.8164">port_allocator_、tls_cert_verifier_);</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="346" x="27" y="2174.5508">4、解析并获取stun_servers和turn_servers,</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="201" x="54" y="2193.2852">并运行端口分配器的初始化;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="179" x="27" y="2212.0195">5、发送IPV4/IPV6状态;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="286" x="27" y="2230.7539">6、创建64位有效符号整形session id;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="460" x="27" y="2249.4883">7、填充JSEP传输控制的参数与创建JsepTransprtConrtoller,</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="518" x="54" y="2268.2227">及关联JsepTransportController的信号与PeerConnection的槽方法;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="226" x="27" y="2286.957">8、初始化两个数据统计收集器;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="178" x="27" y="2305.6914">9、保存全局的配置参数;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="285" x="27" y="2324.4258">10、从全局配置参数抽取ICE相关参数，</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="296" x="63" y="2343.1602">并设置到JsepTransportContrlloer中;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="254" x="27" y="2361.8945">11、判断DataChannel的传输方式;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="299" x="27" y="2380.6289">12、设置音视频相关的网络传输相关参数;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="384" x="27" y="2399.3633">13、创建WebRtcSessionDesciptionFactory对象，</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="233" x="63" y="2418.0977">并关联槽方法，以及为参数赋值;</text><text fill="#555555" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="385" x="27" y="2436.832">14、Plan B SDP下添加默认的音视频transceivers;</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="280" x="607" y="2233.0674"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="260" x="617" y="2259.5117">PeerConnection::Initialize</text><ellipse cx="747" cy="2488.9492" fill="#FFFFFF" rx="11" ry="11" style="stroke: #FF0000; stroke-width: 1.0;"/><ellipse cx="747" cy="2488.9492" fill="#FF0000" rx="6" ry="6" style="stroke: #FF7F7F; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="162.9121" y2="182.9121"/><polygon fill="#66696B" points="743,172.9121,747,182.9121,751,172.9121,747,176.9121" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="223.9883" y2="272.7227"/><polygon fill="#66696B" points="743,262.7227,747,272.7227,751,262.7227,747,266.7227" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="342" x="751" y="251.2227">webrtc::PeerConnectionFactoryInterface</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="313.7988" y2="362.5332"/><polygon fill="#66696B" points="743,352.5332,747,362.5332,751,352.5332,747,356.5332" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="108" x="751" y="341.0332">dependencise</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="403.6094" y2="452.3438"/><polygon fill="#66696B" points="743,442.3438,747,452.3438,751,442.3438,747,446.3438" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="90" x="751" y="430.8438">pc_factory</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="493.4199" y2="542.1543"/><polygon fill="#66696B" points="743,532.1543,747,542.1543,751,532.1543,747,536.1543" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="360" x="751" y="520.6543">&lt;webrtc::PeerConnectionFactoryInterface&gt;</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="583.2305" y2="603.2305"/><polygon fill="#66696B" points="743,593.2305,747,603.2305,751,593.2305,747,597.2305" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="644.3066" y2="664.3066"/><polygon fill="#66696B" points="743,654.3066,747,664.3066,751,654.3066,747,658.3066" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="73.1016" y2="121.8359"/><polygon fill="#66696B" points="743,111.8359,747,121.8359,751,111.8359,747,115.8359" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="705.3828" y2="737.3828"/><polygon fill="#66696B" points="743,727.3828,747,737.3828,751,727.3828,747,731.3828" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="747" x2="747" y1="847.1934" y2="895.9277"/><polygon fill="#66696B" points="743,885.9277,747,895.9277,751,885.9277,747,889.9277" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="48" x="751" y="874.4277">调方法</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="937.0039" y2="957.0039"/><polygon fill="#66696B" points="743,947.0039,747,957.0039,751,947.0039,747,951.0039" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="998.0801" y2="1046.8145"/><polygon fill="#66696B" points="743,1036.8145,747,1046.8145,751,1036.8145,747,1040.8145" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="243" x="751" y="1025.3145">&lt;RtcEvebntFactoryInterface&gt;</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1087.8906" y2="1107.8906"/><polygon fill="#66696B" points="743,1097.8906,747,1107.8906,751,1097.8906,747,1101.8906" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="757.3828" y2="806.1172"/><polygon fill="#66696B" points="743,796.1172,747,806.1172,751,796.1172,747,800.1172" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1148.9668" y2="1180.9668"/><polygon fill="#66696B" points="743,1170.9668,747,1180.9668,751,1170.9668,747,1174.9668" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="747" x2="747" y1="1290.7773" y2="1339.5117"/><polygon fill="#66696B" points="743,1329.5117,747,1339.5117,751,1329.5117,747,1333.5117" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="48" x="751" y="1318.0117">调方法</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 1.0,3.0;" x1="747" x2="747" y1="1380.5879" y2="1429.3223"/><polygon fill="#66696B" points="743,1419.3223,747,1429.3223,751,1419.3223,747,1423.3223" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="180" x="751" y="1407.8223">webrtc::Call::Config</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1470.3984" y2="1519.1328"/><polygon fill="#66696B" points="743,1509.1328,747,1519.1328,751,1509.1328,747,1513.1328" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="198" x="751" y="1497.6328">&lt;CallFactoryInterface&gt;</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="747" x2="747" y1="1560.209" y2="1608.9434"/><polygon fill="#66696B" points="743,1598.9434,747,1608.9434,751,1598.9434,747,1602.9434" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="54" x="751" y="1587.4434">config</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1200.9668" y2="1249.7012"/><polygon fill="#66696B" points="743,1239.7012,747,1249.7012,751,1239.7012,747,1243.7012" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1650.0195" y2="1682.0195"/><polygon fill="#66696B" points="743,1672.0195,747,1682.0195,751,1672.0195,747,1676.0195" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1791.8301" y2="1811.8301"/><polygon fill="#66696B" points="743,1801.8301,747,1811.8301,751,1801.8301,747,1805.8301" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1852.9063" y2="1920.375"/><polygon fill="#66696B" points="743,1910.375,747,1920.375,751,1910.375,747,1914.375" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="477" x="751" y="1880.1406">(initWithFactory:configuration:constraints:delegate:)</text><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="117" x="751" y="1898.875">nativeFactory</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1961.4512" y2="2010.1855"/><polygon fill="#66696B" points="743,2000.1855,747,2010.1855,751,2000.1855,747,2004.1855" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="108" x="751" y="1988.6855">dependencise</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="2051.2617" y2="2233.0674"/><polygon fill="#66696B" points="743,2223.0674,747,2233.0674,751,2223.0674,747,2227.0674" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="558" x="751" y="2088.0786">PeerConnection::PeerConnection(PeerConnectionFactory* factory,</text><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="351" x="1030" y="2106.813">std::unique_ptr&lt;RtcEventLog&gt; event_log,</text><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="243" x="1030" y="2125.5474">std::unique_ptr&lt;Call&gt; call)</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="1702.0195" y2="1750.7539"/><polygon fill="#66696B" points="743,1740.7539,747,1750.7539,751,1740.7539,747,1744.7539" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="747" x2="747" y1="2274.1436" y2="2477.9492"/><polygon fill="#66696B" points="743,2467.9492,747,2477.9492,751,2467.9492,747,2471.9492" style="stroke: #66696B; stroke-width: 1.0;"/><!--MD5=[b9fef746683b9c6a4fbcec913846ae4e]
+@startuml
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+
+' skinparam monochrome true
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+'/'
+skinparam DefaultFontName Consolas
+' skinparam DefaultTextAlignment center
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+    ' FontStyle bold
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+    ' BorderThickness 4
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+   ' BorderColor red
+   ' BackgroundColor Aqua-CadetBlue
+}
+'/
+
+title WebRTC初化流程
+
+start
+
+partition Factory_Initialization {
+
+:RTCPeerConnectionFactory]
+
+:nativeFactory]
+
+->webrtc::PeerConnectionFactoryInterface;
+
+:CreateModularPeerConnectionFactory]
+
+-> dependencise;
+
+:PeerConnectionFactoryProxy::Create]
+
+-> pc_factory;
+
+:宏(Internal)]
+
+-><webrtc::PeerConnectionFactoryInterface>;
+
+:webrtc::PeerConnectionFactory]
+
+:MethodCall0]
+
+:webrtc::PeerConnectionFactory::Initialize()]
+
+}
+
+(+)
+
+partition RtcEventLog_Initialize {
+
+:webrtc::PeerConnectionFactory]
+
+-[dashed]->调方法;
+
+:CreateRtcEventLog_w]
+
+:webrtc::RtcEventLogFactory]
+
+-><RtcEvebntFactoryInterface>;
+
+:webrtc::RtcEventLogFactory::CreateRtcEventLog]
+
+:webrtc::RtcEventLog::Create]
+}
+
+(+)
+
+partition Call_Initialize {
+
+:webrtc::PeerConnectionFactory]
+
+-[dashed]->调方法;
+
+:CreateCall_w]
+
+-[dotted]->webrtc::Call::Config;
+
+:webrtc::CallFactory]
+
+-><CallFactoryInterface>;
+
+:CallFactory::CreateCall]
+
+-[dashed]->config;
+
+:Call::Create]
+
+}
+
+(+)
+
+partition PeerConnection_Initialize {
+
+:RTCPeerConnectionFactory(peerConnectionWithConfiguration:constraints:delegate)]
+
+:RTCPeerConnection]
+
+-> (initWithFactory:configuration:constraints:delegate:)
+nativeFactory;
+
+:webrtc::PeerConnectionFactory::CreatePeerConnection]
+
+-> dependencise;
+
+' :webrtc::PeerConnectionProxy::Create]
+
+:webrtc::PeerConnection]
+
+->PeerConnection::PeerConnection(PeerConnectionFactory* factory,
+                               std::unique_ptr<RtcEventLog> event_log,
+                               std::unique_ptr<Call> call);
+
+:PeerConnection::Initialize]
+
+}
+
+note left
+1、ValidateConfigureation->configureation
+   检查全局参数的有效性;
+2、allocatior与observer不可为空;
+3、为成员赋值(observer_、async_resolver_factory、
+   port_allocator_、tls_cert_verifier_);
+4、解析并获取stun_servers和turn_servers,
+   并运行端口分配器的初始化;
+5、发送IPV4/IPV6状态;
+6、创建64位有效符号整形session id;
+7、填充JSEP传输控制的参数与创建JsepTransprtConrtoller,
+   及关联JsepTransportController的信号与PeerConnection的槽方法;
+8、初始化两个数据统计收集器;
+9、保存全局的配置参数;
+10、从全局配置参数抽取ICE相关参数，
+    并设置到JsepTransportContrlloer中;
+11、判断DataChannel的传输方式;
+12、设置音视频相关的网络传输相关参数;
+13、创建WebRtcSessionDesciptionFactory对象，
+    并关联槽方法，以及为参数赋值;
+14、Plan B SDP下添加默认的音视频transceivers;
+end note
+
+stop
+
+ 
+@enduml
+
+@startuml
+
+
+skinparam DefaultFontName Consolas
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+}
+
+title WebRTC初化流程
+
+start
+
+partition Factory_Initialization {
+
+:RTCPeerConnectionFactory]
+
+:nativeFactory]
+
+->webrtc::PeerConnectionFactoryInterface;
+
+:CreateModularPeerConnectionFactory]
+
+-> dependencise;
+
+:PeerConnectionFactoryProxy::Create]
+
+-> pc_factory;
+
+:宏(Internal)]
+
+-><webrtc::PeerConnectionFactoryInterface>;
+
+:webrtc::PeerConnectionFactory]
+
+:MethodCall0]
+
+:webrtc::PeerConnectionFactory::Initialize()]
+
+}
+
+(+)
+
+partition RtcEventLog_Initialize {
+
+:webrtc::PeerConnectionFactory]
+
+-[dashed]->调方法;
+
+:CreateRtcEventLog_w]
+
+:webrtc::RtcEventLogFactory]
+
+-><RtcEvebntFactoryInterface>;
+
+:webrtc::RtcEventLogFactory::CreateRtcEventLog]
+
+:webrtc::RtcEventLog::Create]
+}
+
+(+)
+
+partition Call_Initialize {
+
+:webrtc::PeerConnectionFactory]
+
+-[dashed]->调方法;
+
+:CreateCall_w]
+
+-[dotted]->webrtc::Call::Config;
+
+:webrtc::CallFactory]
+
+-><CallFactoryInterface>;
+
+:CallFactory::CreateCall]
+
+-[dashed]->config;
+
+:Call::Create]
+
+}
+
+(+)
+
+partition PeerConnection_Initialize {
+
+:RTCPeerConnectionFactory(peerConnectionWithConfiguration:constraints:delegate)]
+
+:RTCPeerConnection]
+
+-> (initWithFactory:configuration:constraints:delegate:)
+nativeFactory;
+
+:webrtc::PeerConnectionFactory::CreatePeerConnection]
+
+-> dependencise;
+
+
+:webrtc::PeerConnection]
+
+->PeerConnection::PeerConnection(PeerConnectionFactory* factory,
+                               std::unique_ptr<RtcEventLog> event_log,
+                               std::unique_ptr<Call> call);
+
+:PeerConnection::Initialize]
+
+}
+
+note left
+1、ValidateConfigureation->configureation
+   检查全局参数的有效性;
+2、allocatior与observer不可为空;
+3、为成员赋值(observer_、async_resolver_factory、
+   port_allocator_、tls_cert_verifier_);
+4、解析并获取stun_servers和turn_servers,
+   并运行端口分配器的初始化;
+5、发送IPV4/IPV6状态;
+6、创建64位有效符号整形session id;
+7、填充JSEP传输控制的参数与创建JsepTransprtConrtoller,
+   及关联JsepTransportController的信号与PeerConnection的槽方法;
+8、初始化两个数据统计收集器;
+9、保存全局的配置参数;
+10、从全局配置参数抽取ICE相关参数，
+    并设置到JsepTransportContrlloer中;
+11、判断DataChannel的传输方式;
+12、设置音视频相关的网络传输相关参数;
+13、创建WebRtcSessionDesciptionFactory对象，
+    并关联槽方法，以及为参数赋值;
+14、Plan B SDP下添加默认的音视频transceivers;
+end note
+
+stop
+
+ 
+@enduml
+
+PlantUML version 1.2020.18(Thu Oct 01 03:40:44 CST 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: zh
+Country: CN
+--></g></svg>

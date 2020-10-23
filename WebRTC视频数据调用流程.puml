@@ -1,0 +1,263 @@
+@startuml
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+
+' skinparam monochrome true
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+'/'
+skinparam DefaultFontName Consolas
+' skinparam DefaultTextAlignment center
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+    ' FontStyle bold
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+    ' BorderThickness 4
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+   ' BorderColor red
+   ' BackgroundColor Aqua-CadetBlue
+}
+'/
+
+title WebRTC视频数据调用流程
+
+start
+
+fork
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:RTCCameraVideoCapturer captureOutput:didOutputSampleBuffer:fromConnection:]
+->delegate;
+:RTCVideoSource capturer:didCaptureVideoFrame:]
+->_nativeVideoSource;
+:ObjCVideoTrackSource::OnCapturedFrame]
+->super;
+:AdaptedVideoTrackSource::OnFrame]
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:CameraCapturer OnFrameCaptured]
+->capturerObserver;
+:VideoSource$capturerObserver OnFrameCaptured]
+->capturerObserver;
+:NativeAndroidVideoTrackSource OnFrameCaptured]
+->JNI;
+:AndroidVideoTrackSource::OnFrameCaptured]
+->super;
+:AdaptedVideoTrackSource::OnFrame]
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:CaptureInputPin::Receive]
+->filter;
+:CaputreSinkFilter::ProcessCapturedFrame]
+->capture_observer_;
+:VideoCaptureImpl::IncomingFrame]
+:VideoCaptureImpl::DeliverCapturedFrame]
+->_dataCallBack;
+:VcmCapturer::OnFrame]
+->super;
+:TestVideoCapturer::OnFrame]
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:VideoCaptureModuleV4L2::CaptureProcess]
+->super;
+:VideoCaptureImpl::IncomingFrame]
+:VideoCaptureImpl::DeliverCapturedFrame]
+->_dataCallBack;
+:VcmCapturer::OnFrame]
+->super;
+:TestVideoCapturer::OnFrame]
+' stop Linux
+end fork
+
+
+->broadcaster_;
+:VideoBroadcaster::OnFrame]
+->sink_;
+:VideoStreamEncoder::OnFrame]
+-[dashed]->encoder_queue_;
+:VideoStreamEncoder::EncodeVideoFrame]
+->encoder_;
+
+
+fork 
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:RTCVideoEncoderH264 encode:codecSpecificInfo:frameTypes:]
+-[dashed]->;
+:RTCVideoEncoderH264 frameWasEncoded:flags:sampleBuffer:
+codecSpecificInfo:width:height:renderTimeMs:timestamp:rotation:]
+->callback_;
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:VideoEncoderWrapper::Encode]
+->(JNI)encoder_;
+:HardwareVideoEncoder encode]
+-[dashed]->outputThread;
+:HardwareVideoEncoder deliverEncodedImage]
+->callback;
+:VideoEncoderWrapper nativeOnEncodedFrame]
+->JNI;
+:VideoEncoderWrapper::OnEncodedFrame]
+-[dashed]->encoder_queue_+callback_;
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:EncoderSimulcastProxy::Encode]
+->encoder_;
+:H264EncoderImpl::Encode]
+->encoded_image_callback_;
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:EncoderSimulcastProxy::Encode]
+->encoder_;
+:H264EncoderImpl::Encode]
+' stop Linux
+end fork
+
+
+:VideoStreamEncoder::OnEncodedImage]
+->sink_;
+:VideoSendStreamImpl::OonEncodedImage]
+->rtp_video_sender_;
+:RtpVideoSender::OnEncodedImage]
+->发送;
+#AAAAAA:RTP & Network layer]
+->接收;
+:RtpVideoStreamReceiver::OnCompleteFrame]
+->complete_frame_callback_;
+:VideoReceiveStream::OnCompleteFrame]
+-[dashed]->decode_queue_;
+:VideoReceiveStream::HandleEncodedFrame]
+->video_receiver_;
+:VideoReceiver2::Decode]
+->decoder;
+:VCMGenericDecoder::Decode]
+->decoder_;
+
+
+fork
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:ObjCVideoDecoder:Decode]
+->decoder_;
+:RTCVideoDecoderH264 decode:missingFrames:codecSpecificInfo:renderTimeMs:]
+-[dashed]->;
+:decompressionOutputCallback]
+->callback;
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:VideoDecoderSoftwareFallbackWrapper::Decode]
+->hw_decoder_;
+:VideoDecoderWrapper::Decode]
+->(JNI)decoder_;
+:AndroidVideoDecoder decode]
+-[dashed]->outputThread;
+:AndroidVideoDecoder deliverDecodedFrame]
+->callback;
+:VideoDecoderWrapper nativeOnDecodedFrame]
+->JNI;
+:VideoDecoderWrapper::OnDecodedFrame]
+->callback;
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:H264DecoderImpl::Decode]
+->decoded_image_callback_;
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:H264DecoderImpl::Decode]
+->decoded_image_callback_;
+' stop Linux
+end fork
+
+
+
+:VCMDecodedFrameCallback::Decoded]
+->_receiveCallback;
+:VideoStreamDecoder::FrameToRender]
+->incoming_video_stream_;
+:IncomingVideoStream::OnFrame]
+-[dashed]->incoming_render_queue_;
+:IncomingVideoStream::Dequeue]
+->callback_;
+:VideoReceiveStream::OnFrame]
+->config_.renderer;
+:WebRtcVideoChannel::WebRtcVideoReceiveStream::OnFrame]
+->sink_;
+:VideoBroadcaster::OnFrame]
+->sink_;
+
+
+fork
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:VideoRendererAdapter::OnFrame]
+->adapter_.videoRenerer;
+:RTCMTLVideoView renderFrame:]
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:VideoSinkWrapper::OnFrame]
+->(JNI)j_sink_;
+:SurfaceViewRenderer OnFrame]
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:MAinWnd::VideoRenderer::OnFrame]
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:GtkMainWnd::VideoRenderer::OnFrame]
+' stop Linux
+end fork
+
+stop
+
+@enduml

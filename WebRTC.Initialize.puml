@@ -1,0 +1,178 @@
+@startuml
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+
+' skinparam monochrome true
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+'/'
+skinparam DefaultFontName Consolas
+' skinparam DefaultTextAlignment center
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+    ' FontStyle bold
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+    ' BorderThickness 4
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+   ' BorderColor red
+   ' BackgroundColor Aqua-CadetBlue
+}
+'/
+
+title WebRTC初化流程
+
+start
+
+partition Factory_Initialization {
+
+:RTCPeerConnectionFactory]
+
+:nativeFactory]
+
+->webrtc::PeerConnectionFactoryInterface;
+
+:CreateModularPeerConnectionFactory]
+
+-> dependencise;
+
+:PeerConnectionFactoryProxy::Create]
+
+-> pc_factory;
+
+:宏(Internal)]
+
+-><webrtc::PeerConnectionFactoryInterface>;
+
+:webrtc::PeerConnectionFactory]
+
+:MethodCall0]
+
+:webrtc::PeerConnectionFactory::Initialize()]
+
+}
+
+(+)
+
+partition RtcEventLog_Initialize {
+
+:webrtc::PeerConnectionFactory]
+
+-[dashed]->调方法;
+
+:CreateRtcEventLog_w]
+
+:webrtc::RtcEventLogFactory]
+
+-><RtcEvebntFactoryInterface>;
+
+:webrtc::RtcEventLogFactory::CreateRtcEventLog]
+
+:webrtc::RtcEventLog::Create]
+}
+
+(+)
+
+partition Call_Initialize {
+
+:webrtc::PeerConnectionFactory]
+
+-[dashed]->调方法;
+
+:CreateCall_w]
+
+-[dotted]->webrtc::Call::Config;
+
+:webrtc::CallFactory]
+
+-><CallFactoryInterface>;
+
+:CallFactory::CreateCall]
+
+-[dashed]->config;
+
+:Call::Create]
+
+}
+
+(+)
+
+partition PeerConnection_Initialize {
+
+:RTCPeerConnectionFactory(peerConnectionWithConfiguration:constraints:delegate)]
+
+:RTCPeerConnection]
+
+-> (initWithFactory:configuration:constraints:delegate:)
+nativeFactory;
+
+:webrtc::PeerConnectionFactory::CreatePeerConnection]
+
+-> dependencise;
+
+' :webrtc::PeerConnectionProxy::Create]
+
+:webrtc::PeerConnection]
+
+->PeerConnection::PeerConnection(PeerConnectionFactory* factory,
+                               std::unique_ptr<RtcEventLog> event_log,
+                               std::unique_ptr<Call> call);
+
+:PeerConnection::Initialize]
+
+}
+
+note left
+1、ValidateConfigureation->configureation
+   检查全局参数的有效性;
+2、allocatior与observer不可为空;
+3、为成员赋值(observer_、async_resolver_factory、
+   port_allocator_、tls_cert_verifier_);
+4、解析并获取stun_servers和turn_servers,
+   并运行端口分配器的初始化;
+5、发送IPV4/IPV6状态;
+6、创建64位有效符号整形session id;
+7、填充JSEP传输控制的参数与创建JsepTransprtConrtoller,
+   及关联JsepTransportController的信号与PeerConnection的槽方法;
+8、初始化两个数据统计收集器;
+9、保存全局的配置参数;
+10、从全局配置参数抽取ICE相关参数，
+    并设置到JsepTransportContrlloer中;
+11、判断DataChannel的传输方式;
+12、设置音视频相关的网络传输相关参数;
+13、创建WebRtcSessionDesciptionFactory对象，
+    并关联槽方法，以及为参数赋值;
+14、Plan B SDP下添加默认的音视频transceivers;
+end note
+
+stop
+
+ 
+@enduml

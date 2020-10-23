@@ -1,0 +1,216 @@
+@startuml
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+
+' skinparam monochrome true
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+'/'
+skinparam DefaultFontName Consolas
+' skinparam DefaultTextAlignment center
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+    ' FontStyle bold
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+    ' BorderThickness 4
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+   ' BorderColor red
+   ' BackgroundColor Aqua-CadetBlue
+}
+'/
+
+title WebRTC设置loacal SDP与收集设置candidate
+
+start
+
+partition 设置loacal_SDP与收集candidate {
+
+:PeerConnection::SetLocalDescription]
+
+:JsepTransportController::MaybeStartGathering]
+
+-><IceTransportInternal>;
+
+:P2PTransportChannel::MaybeStartGathering]
+
+->PeerConnectionFactory::CreatePeerConnection初始化传入的,
+BasicPortAllocator::CreateSessionInternal;
+
+:BasicPortAllocatorSession::StartGettingPort]
+
+-[dashed]->OnMessage();
+
+:BasicPortAllocatorSession::GetPortConfigurations]
+
+:BasicPortAllocatorSession::OnConfigReady]
+
+:BasicPortAllocatorSession::OnAllocate]
+
+:BasicPortAllocatorSession::DoAllocate]
+
+:AllocationSequence::Start]
+
+-[dashed]->OnMessage();
+
+:AllocationSequence::CreateRelayPorts]
+
+:AllocationSequence::CreateGturnPort]
+
+:BasicPortAllocatorSession::AddAllocatedPort]
+
+->Port
+<PortInterface, rtc::MessageHandler, 
+sigslot::has_slots<>>;
+
+:TurnPort::PrepareAddress]
+
+:TurnPort::SendRequest]
+
+-[dashed]->StunRequestManager::SendDelayed;
+
+:StunRequest::OnMessage]
+
+-[dotted]->发送请求，接收响应;
+
+:StunRequestManager::CheckResponse]
+
+:TurnAllocateRequest::OnErrorResponse]
+
+->STUN_ERROR_TRY_ALTERNATE;
+
+:TurnAllocateRequest::OnAuthChallenge]
+
+:TurnPort::SendRequest]
+
+-[dotted]->发送请求，接收响应;
+
+:StunRequestManager::CheckResponse]
+
+:TurnRefreshRequest::OnResponse]
+
+:TurnPort::OnAllocateSuccess]
+
+:Port::AddAdress]
+
+:Port::FinishAddingAddress]
+
+:Port::PostAddAddress]
+
+-[dashed]->(sigslot)SignalPortComplete;
+
+:BasicPortAllocatorSession::OnCandidateReady]
+
+-[dashed]->(sigslot)SignalCandidatesReady;
+
+:P2PTransportChannel::OnCandidatesReady]
+
+-[dashed]->(sigslot)SignalCandidateGathered;
+
+:JsepTransportController::OnTransportCandidateGathered_n]
+
+-[dashed]->(sigslot)SignalIceCandidatesGathered;
+
+:PeerConnection::OnTransportControllerCandidatesGathered]
+
+:PeerConnection::OnIceCandidate]
+
+:PeerConnectionOberver::OnIceCandidate]
+
+:PeerConnectionDelegateAdapter::OnIceCandidate]
+
+}
+
+(+)
+
+partition 收到远端candidate后 {
+
+:RTCPeerConnection::addIceCandidate]
+
+:webrtc::PeerConnection::AddIceCandidate]
+
+:PeerConnection::UseCandidate]
+
+:JsepTransportController::AddRemoteCandidates]
+
+:JsepTransport::AddRemoteCandidates]
+
+-><IceTransportInternal>;
+
+:P2PTransportChannel::AddRemoteCandidate]
+
+:P2PTransportChannel::FinishAddingRemoteCandidate]
+
+:P2PTransportChannel::CreateConnections]
+
+:P2PTransportChannel::sortConnectionsAndUpdateState]
+
+:P2PTransportChannel::MaybeStartPinging]
+
+:P2PTransportChannel::CheckAndPing]
+
+:P2PTransportChannel::PingConnection]
+
+:StunRequestManager::SendDelayed]
+
+-[dotted]->发送请求，接收消息;
+
+:Connection::OnConnectionRequestResponse]
+
+:Connection::ReceivedPingResponse]
+
+:Connection::set_write_state]
+
+-[dashed]->(sigslot)SignalStateChange;
+
+:P2PTransportChannel::OnConnectionStateChange]
+
+:P2PTransportChannel::RequestSortAndStateUpdate]
+
+:P2PTransportChannel::SortConnectionsAndUpdateState]
+
+:P2PTransportChannel::SwitchSelectedConnection]
+
+-[dashed]->(sigslot)SignalReadyToSend;
+
+:DtlsTransport::OnReadyToSend]
+
+-[dashed]->(sigslot)SignalReadyToSend;
+
+:RTPTransport::OnReadyToSend]
+
+:RtpTransport::SetReadyToSend]
+
+}
+
+stop
+
+ 
+@enduml

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="3821px" preserveAspectRatio="none" style="width:2170px;height:3821px;" version="1.1" viewBox="0 0 2170 3821" width="2170px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="38.1016" rx="5" ry="5" style="stroke: #000000; stroke-width: 1.0;" width="286" x="940.5" y="12"/><text fill="#000000" font-family="Consolas" font-size="24" lengthAdjust="spacingAndGlyphs" textLength="270" x="948.5" y="38.9258">WebRTC视频数据调用流程</text><ellipse cx="1085" cy="63.1016" fill="#000000" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="2148" x="11" y="93.1016"/><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="760" x="23" y="223.2793"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="740" x="33" y="249.7236">RTCCameraVideoCapturer captureOutput:didOutputSampleBuffer:fromConnection:</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="470" x="168" y="318.0898"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="450" x="178" y="344.5342">RTCVideoSource capturer:didCaptureVideoFrame:</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="390" x="208" y="412.9004"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="370" x="218" y="439.3447">ObjCVideoTrackSource::OnCapturedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="340" x="233" y="507.7109"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="320" x="243" y="534.1553">AdaptedVideoTrackSource::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="320" x="886" y="175.874"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="300" x="896" y="202.3184">CameraCapturer OnFrameCaptured</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="460" x="816" y="270.6846"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="440" x="826" y="297.1289">VideoSource$capturerObserver OnFrameCaptured</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="470" x="811" y="365.4951"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="450" x="821" y="391.9395">NativeAndroidVideoTrackSource OnFrameCaptured</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="420" x="836" y="460.3057"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="400" x="846" y="486.75">AndroidVideoTrackSource::OnFrameCaptured</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="340" x="876" y="555.1162"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="320" x="886" y="581.5605">AdaptedVideoTrackSource::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="260" x="1384" y="137.8359"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="240" x="1394" y="164.2803">CaptureInputPin::Receive</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="410" x="1309" y="232.6465"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="390" x="1319" y="259.0908">CaputreSinkFilter::ProcessCapturedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="330" x="1349" y="327.457"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="310" x="1359" y="353.9014">VideoCaptureImpl::IncomingFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="400" x="1314" y="403.5332"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="380" x="1324" y="429.9775">VideoCaptureImpl::DeliverCapturedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="220" x="1404" y="498.3438"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="200" x="1414" y="524.7881">VcmCapturer::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="280" x="1374" y="593.1543"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="260" x="1384" y="619.5986">TestVideoCapturer::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="400" x="1747" y="185.2412"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="380" x="1757" y="211.6855">VideoCaptureModuleV4L2::CaptureProcess</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="330" x="1782" y="280.0518"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="310" x="1792" y="306.4961">VideoCaptureImpl::IncomingFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="400" x="1747" y="356.1279"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="380" x="1757" y="382.5723">VideoCaptureImpl::DeliverCapturedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="220" x="1837" y="450.9385"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="200" x="1847" y="477.3828">VcmCapturer::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="280" x="1807" y="545.749"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="260" x="1817" y="572.1934">TestVideoCapturer::OnFrame</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="2148" x="11" y="654.2305"/><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="270" x="950" y="708.9648"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="250" x="960" y="735.4092">VideoBroadcaster::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="940" y="798.7754"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="950" y="825.2197">VideoStreamEncoder::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="380" x="895" y="888.5859"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="360" x="905" y="915.0303">VideoStreamEncoder::EncodeVideoFrame</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="1860" x="155" y="978.3965"/><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="580" x="204" y="1164.0586"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="560" x="214" y="1190.5029">RTCVideoEncoderH264 encode:codecSpecificInfo:frameTypes:</text><rect fill="#FFFFFF" height="62.1523" style="stroke: #66696B; stroke-width: 2.0;" width="650" x="169" y="1240.1348"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="550" x="179" y="1266.5791">RTCVideoEncoderH264 frameWasEncoded:flags:sampleBuffer:</text><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="630" x="179" y="1287.6553">codecSpecificInfo:width:height:renderTimeMs:timestamp:rotation:</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="912" y="1023.1309"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="922" y="1049.5752">VideoEncoderWrapper::Encode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="912" y="1117.8242"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="922" y="1144.2686">HardwareVideoEncoder encode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="420" x="847" y="1212.6348"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="400" x="857" y="1239.0791">HardwareVideoEncoder deliverEncodedImage</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="420" x="847" y="1307.4453"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="400" x="857" y="1333.8896">VideoEncoderWrapper nativeOnEncodedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="370" x="872" y="1397.373"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="350" x="882" y="1423.8174">VideoEncoderWrapper::OnEncodedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="310" x="1301" y="1165.2295"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="1311" y="1191.6738">EncoderSimulcastProxy::Encode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="250" x="1331" y="1260.04"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="230" x="1341" y="1286.4844">H264EncoderImpl::Encode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="310" x="1691" y="1165.2295"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="1701" y="1191.6738">EncoderSimulcastProxy::Encode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="250" x="1721" y="1260.04"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="230" x="1731" y="1286.4844">H264EncoderImpl::Encode</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="1860" x="155" y="1477.1836"/><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="360" x="905" y="1503.1836"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="340" x="915" y="1529.6279">VideoStreamEncoder::OnEncodedImage</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="380" x="895" y="1592.9941"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="360" x="905" y="1619.4385">VideoSendStreamImpl::OonEncodedImage</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="320" x="925" y="1682.8047"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="300" x="935" y="1709.249">RtpVideoSender::OnEncodedImage</text><rect fill="#AAAAAA" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="210" x="980" y="1772.6152"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="190" x="990" y="1799.0596">RTP &amp; Network layer</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="410" x="880" y="1862.4258"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="390" x="890" y="1888.8701">RtpVideoStreamReceiver::OnCompleteFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="370" x="900" y="1952.2363"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="350" x="910" y="1978.6807">VideoReceiveStream::OnCompleteFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="400" x="885" y="2042.0469"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="380" x="895" y="2068.4912">VideoReceiveStream::HandleEncodedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="240" x="965" y="2131.8574"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="220" x="975" y="2158.3018">VideoReceiver2::Decode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="270" x="950" y="2221.668"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="250" x="960" y="2248.1123">VCMGenericDecoder::Decode</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="1966" x="102" y="2311.4785"/><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="250" x="361" y="2507.6787"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="230" x="371" y="2534.123">ObjCVideoDecoder:Decode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="740" x="116" y="2602.4893"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="720" x="126" y="2628.9336">RTCVideoDecoderH264 decode:missingFrames:codecSpecificInfo:renderTimeMs:</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="341" y="2678.5654"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="351" y="2705.0098">decompressionOutputCallback</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="450" x="884" y="2356.2129"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="430" x="894" y="2382.6572">VideoDecoderSoftwareFallbackWrapper::Decode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="964" y="2450.9063"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="974" y="2477.3506">VideoDecoderWrapper::Decode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="280" x="969" y="2545.7168"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="260" x="979" y="2572.1611">AndroidVideoDecoder decode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="410" x="904" y="2640.5273"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="390" x="914" y="2666.9717">AndroidVideoDecoder deliverDecodedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="420" x="899" y="2735.3379"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="400" x="909" y="2761.7822">VideoDecoderWrapper nativeOnDecodedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="370" x="924" y="2827.6802"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="350" x="934" y="2854.1245">VideoDecoderWrapper::OnDecodedFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="250" x="1362" y="2593.1221"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="230" x="1372" y="2619.5664">H264DecoderImpl::Decode</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="250" x="1722" y="2593.1221"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="230" x="1732" y="2619.5664">H264DecoderImpl::Decode</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="1966" x="102" y="2907.4907"/><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="340" x="915" y="2933.4907"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="320" x="925" y="2959.9351">VCMDecodedFrameCallback::Decoded</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="350" x="910" y="3023.3013"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="330" x="920" y="3049.7456">VideoStreamDecoder::FrameToRender</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="300" x="935" y="3113.1118"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="280" x="945" y="3139.5562">IncomingVideoStream::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="300" x="935" y="3202.9224"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="280" x="945" y="3229.3667">IncomingVideoStream::Dequeue</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="940" y="3292.7329"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="950" y="3319.1772">VideoReceiveStream::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="550" x="810" y="3382.5435"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="530" x="820" y="3408.9878">WebRtcVideoChannel::WebRtcVideoReceiveStream::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="270" x="950" y="3472.354"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="250" x="960" y="3498.7983">VideoBroadcaster::OnFrame</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="1440" x="365" y="3562.1646"/><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="310" x="379" y="3606.8989"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="290" x="389" y="3633.3433">VideoRendererAdapter::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="300" x="384" y="3701.7095"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="280" x="394" y="3728.1538">RTCMTLVideoView renderFrame:</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="270" x="765" y="3606.8989"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="250" x="775" y="3633.3433">VideoSinkWrapper::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="290" x="755" y="3701.7095"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="270" x="765" y="3728.1538">SurfaceViewRenderer OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="330" x="1073" y="3654.3042"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="310" x="1083" y="3680.7485">MAinWnd::VideoRenderer::OnFrame</text><rect fill="#FFFFFF" height="41.0762" style="stroke: #66696B; stroke-width: 2.0;" width="360" x="1431" y="3654.3042"/><text fill="#000000" font-family="Consolas" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="340" x="1441" y="3680.7485">GtkMainWnd::VideoRenderer::OnFrame</text><rect fill="#000000" height="6" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 1.0;" width="1440" x="365" y="3762.7856"/><ellipse cx="1085" cy="3799.7856" fill="#FFFFFF" rx="11" ry="11" style="stroke: #FF0000; stroke-width: 1.0;"/><ellipse cx="1085" cy="3799.7856" fill="#FF0000" rx="6" ry="6" style="stroke: #FF7F7F; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="403" x2="403" y1="264.3555" y2="318.0898"/><polygon fill="#66696B" points="399,308.0898,403,318.0898,407,308.0898,403,312.0898" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="407" y="296.4727">delegate</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="403" x2="403" y1="359.166" y2="412.9004"/><polygon fill="#66696B" points="399,402.9004,403,412.9004,407,402.9004,403,406.9004" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="162" x="407" y="391.2832">_nativeVideoSource</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="403" x2="403" y1="453.9766" y2="507.7109"/><polygon fill="#66696B" points="399,497.7109,403,507.7109,407,497.7109,403,501.7109" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="407" y="486.0938">super</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1046" x2="1046" y1="216.9502" y2="270.6846"/><polygon fill="#66696B" points="1042,260.6846,1046,270.6846,1050,260.6846,1046,264.6846" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="144" x="1050" y="249.0674">capturerObserver</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1046" x2="1046" y1="311.7607" y2="365.4951"/><polygon fill="#66696B" points="1042,355.4951,1046,365.4951,1050,355.4951,1046,359.4951" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="144" x="1050" y="343.8779">capturerObserver</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1046" x2="1046" y1="406.5713" y2="460.3057"/><polygon fill="#66696B" points="1042,450.3057,1046,460.3057,1050,450.3057,1046,454.3057" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="27" x="1050" y="438.6885">JNI</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1046" x2="1046" y1="501.3818" y2="555.1162"/><polygon fill="#66696B" points="1042,545.1162,1046,555.1162,1050,545.1162,1046,549.1162" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1050" y="533.499">super</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1514" x2="1514" y1="178.9121" y2="232.6465"/><polygon fill="#66696B" points="1510,222.6465,1514,232.6465,1518,222.6465,1514,226.6465" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="54" x="1518" y="211.0293">filter</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1514" x2="1514" y1="273.7227" y2="327.457"/><polygon fill="#66696B" points="1510,317.457,1514,327.457,1518,317.457,1514,321.457" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="153" x="1518" y="305.8398">capture_observer_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1514" x2="1514" y1="368.5332" y2="403.5332"/><polygon fill="#66696B" points="1510,393.5332,1514,403.5332,1518,393.5332,1514,397.5332" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1514" x2="1514" y1="444.6094" y2="498.3438"/><polygon fill="#66696B" points="1510,488.3438,1514,498.3438,1518,488.3438,1514,492.3438" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="117" x="1518" y="476.7266">_dataCallBack</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1514" x2="1514" y1="539.4199" y2="593.1543"/><polygon fill="#66696B" points="1510,583.1543,1514,593.1543,1518,583.1543,1514,587.1543" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1518" y="571.5371">super</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1947" x2="1947" y1="226.3174" y2="280.0518"/><polygon fill="#66696B" points="1943,270.0518,1947,280.0518,1951,270.0518,1947,274.0518" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1951" y="258.4346">super</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1947" x2="1947" y1="321.1279" y2="356.1279"/><polygon fill="#66696B" points="1943,346.1279,1947,356.1279,1951,346.1279,1947,350.1279" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1947" x2="1947" y1="397.2041" y2="450.9385"/><polygon fill="#66696B" points="1943,440.9385,1947,450.9385,1951,440.9385,1947,444.9385" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="117" x="1951" y="429.3213">_dataCallBack</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1947" x2="1947" y1="492.0146" y2="545.749"/><polygon fill="#66696B" points="1943,535.749,1947,545.749,1951,535.749,1947,539.749" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1951" y="524.1318">super</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="403" x2="403" y1="99.1016" y2="223.2793"/><polygon fill="#FF0000" points="399,213.2793,403,223.2793,407,213.2793,403,217.2793" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="81" x="407" y="166.4404">iOS/macOS</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1046" x2="1046" y1="99.1016" y2="175.874"/><polygon fill="#FF0000" points="1042,165.874,1046,175.874,1050,165.874,1046,169.874" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1050" y="142.7378">Android</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1514" x2="1514" y1="99.1016" y2="137.8359"/><polygon fill="#FF0000" points="1510,127.8359,1514,137.8359,1518,127.8359,1514,131.8359" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1518" y="123.7188">Windows</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1947" x2="1947" y1="99.1016" y2="185.2412"/><polygon fill="#FF0000" points="1943,175.2412,1947,185.2412,1951,175.2412,1947,179.2412" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1951" y="147.4214">Linux</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="403" x2="403" y1="548.7871" y2="654.2305"/><polygon fill="#66696B" points="399,644.2305,403,654.2305,407,644.2305,403,648.2305" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1046" x2="1046" y1="596.1924" y2="654.2305"/><polygon fill="#66696B" points="1042,644.2305,1046,654.2305,1050,644.2305,1046,648.2305" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1514" x2="1514" y1="634.2305" y2="654.2305"/><polygon fill="#66696B" points="1510,644.2305,1514,654.2305,1518,644.2305,1514,648.2305" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1947" x2="1947" y1="586.8252" y2="654.2305"/><polygon fill="#66696B" points="1943,644.2305,1947,654.2305,1951,644.2305,1947,648.2305" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="73.1016" y2="93.1016"/><polygon fill="#66696B" points="1081,83.1016,1085,93.1016,1089,83.1016,1085,87.1016" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="660.2305" y2="708.9648"/><polygon fill="#66696B" points="1081,698.9648,1085,708.9648,1089,698.9648,1085,702.9648" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="108" x="1089" y="687.4648">broadcaster_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="750.041" y2="798.7754"/><polygon fill="#66696B" points="1081,788.7754,1085,798.7754,1089,788.7754,1085,792.7754" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1089" y="777.2754">sink_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="1085" x2="1085" y1="839.8516" y2="888.5859"/><polygon fill="#66696B" points="1081,878.5859,1085,888.5859,1089,878.5859,1085,882.5859" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="126" x="1089" y="867.0859">encoder_queue_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="494" x2="494" y1="1205.1348" y2="1240.1348"/><polygon fill="#66696B" points="490,1230.1348,494,1240.1348,498,1230.1348,494,1234.1348" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1057" x2="1057" y1="1064.207" y2="1117.8242"/><polygon fill="#66696B" points="1053,1107.8242,1057,1117.8242,1061,1107.8242,1057,1111.8242" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="117" x="1061" y="1096.3242">(JNI)encoder_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="1057" x2="1057" y1="1158.9004" y2="1212.6348"/><polygon fill="#66696B" points="1053,1202.6348,1057,1212.6348,1061,1202.6348,1057,1206.6348" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="108" x="1061" y="1191.0176">outputThread</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1057" x2="1057" y1="1253.7109" y2="1307.4453"/><polygon fill="#66696B" points="1053,1297.4453,1057,1307.4453,1061,1297.4453,1057,1301.4453" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="1061" y="1285.8281">callback</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1057" x2="1057" y1="1348.5215" y2="1397.373"/><polygon fill="#66696B" points="1053,1387.373,1057,1397.373,1061,1387.373,1057,1391.373" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="27" x="1061" y="1375.7559">JNI</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1456" x2="1456" y1="1206.3057" y2="1260.04"/><polygon fill="#66696B" points="1452,1250.04,1456,1260.04,1460,1250.04,1456,1254.04" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="1460" y="1238.4229">encoder_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1846" x2="1846" y1="1206.3057" y2="1260.04"/><polygon fill="#66696B" points="1842,1250.04,1846,1260.04,1850,1250.04,1846,1254.04" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="1850" y="1238.4229">encoder_</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="494" x2="494" y1="984.3965" y2="1164.0586"/><polygon fill="#FF0000" points="490,1154.0586,494,1164.0586,498,1154.0586,494,1158.0586" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="81" x="498" y="1079.5361">iOS/macOS</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1057" x2="1057" y1="984.3965" y2="1023.1309"/><polygon fill="#FF0000" points="1053,1013.1309,1057,1023.1309,1061,1013.1309,1057,1017.1309" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1061" y="1009.0137">Android</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1456" x2="1456" y1="984.3965" y2="1165.2295"/><polygon fill="#FF0000" points="1452,1155.2295,1456,1165.2295,1460,1155.2295,1456,1159.2295" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1460" y="1080.1216">Windows</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1846" x2="1846" y1="984.3965" y2="1165.2295"/><polygon fill="#FF0000" points="1842,1155.2295,1846,1165.2295,1850,1155.2295,1846,1159.2295" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1850" y="1080.1216">Linux</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="494" x2="494" y1="1302.2871" y2="1477.1836"/><polygon fill="#66696B" points="490,1467.1836,494,1477.1836,498,1467.1836,494,1471.1836" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="81" x="498" y="1392.5439">callback_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="1057" x2="1057" y1="1438.4492" y2="1477.1836"/><polygon fill="#66696B" points="1053,1467.1836,1057,1477.1836,1061,1467.1836,1057,1471.1836" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="216" x="1061" y="1463.0664">encoder_queue_+callback_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1456" x2="1456" y1="1301.1162" y2="1477.1836"/><polygon fill="#66696B" points="1452,1467.1836,1456,1477.1836,1460,1467.1836,1456,1471.1836" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="207" x="1460" y="1391.9585">encoded_image_callback_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1846" x2="1846" y1="1301.1162" y2="1477.1836"/><polygon fill="#66696B" points="1842,1467.1836,1846,1477.1836,1850,1467.1836,1846,1471.1836" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="929.6621" y2="978.3965"/><polygon fill="#66696B" points="1081,968.3965,1085,978.3965,1089,968.3965,1085,972.3965" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="1089" y="956.8965">encoder_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="1483.1836" y2="1503.1836"/><polygon fill="#66696B" points="1081,1493.1836,1085,1503.1836,1089,1493.1836,1085,1497.1836" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="1544.2598" y2="1592.9941"/><polygon fill="#66696B" points="1081,1582.9941,1085,1592.9941,1089,1582.9941,1085,1586.9941" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1089" y="1571.4941">sink_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="1634.0703" y2="1682.8047"/><polygon fill="#66696B" points="1081,1672.8047,1085,1682.8047,1089,1672.8047,1085,1676.8047" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="153" x="1089" y="1661.3047">rtp_video_sender_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="1723.8809" y2="1772.6152"/><polygon fill="#66696B" points="1081,1762.6152,1085,1772.6152,1089,1762.6152,1085,1766.6152" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="32" x="1089" y="1751.1152">发送</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="1813.6914" y2="1862.4258"/><polygon fill="#66696B" points="1081,1852.4258,1085,1862.4258,1089,1852.4258,1085,1856.4258" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="32" x="1089" y="1840.9258">接收</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="1903.502" y2="1952.2363"/><polygon fill="#66696B" points="1081,1942.2363,1085,1952.2363,1089,1942.2363,1085,1946.2363" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="216" x="1089" y="1930.7363">complete_frame_callback_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="1085" x2="1085" y1="1993.3125" y2="2042.0469"/><polygon fill="#66696B" points="1081,2032.0469,1085,2042.0469,1089,2032.0469,1085,2036.0469" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="117" x="1089" y="2020.5469">decode_queue_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="2083.123" y2="2131.8574"/><polygon fill="#66696B" points="1081,2121.8574,1085,2131.8574,1089,2121.8574,1085,2125.8574" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="135" x="1089" y="2110.3574">video_receiver_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="2172.9336" y2="2221.668"/><polygon fill="#66696B" points="1081,2211.668,1085,2221.668,1089,2211.668,1085,2215.668" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1089" y="2200.168">decoder</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="486" x2="486" y1="2548.7549" y2="2602.4893"/><polygon fill="#66696B" points="482,2592.4893,486,2602.4893,490,2592.4893,486,2596.4893" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="490" y="2580.8721">decoder_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="486" x2="486" y1="2643.5654" y2="2678.5654"/><polygon fill="#66696B" points="482,2668.5654,486,2678.5654,490,2668.5654,486,2672.5654" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1109" x2="1109" y1="2397.2891" y2="2450.9063"/><polygon fill="#66696B" points="1105,2440.9063,1109,2450.9063,1113,2440.9063,1109,2444.9063" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="99" x="1113" y="2429.4063">hw_decoder_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1109" x2="1109" y1="2491.9824" y2="2545.7168"/><polygon fill="#66696B" points="1105,2535.7168,1109,2545.7168,1113,2535.7168,1109,2539.7168" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="117" x="1113" y="2524.0996">(JNI)decoder_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="1109" x2="1109" y1="2586.793" y2="2640.5273"/><polygon fill="#66696B" points="1105,2630.5273,1109,2640.5273,1113,2630.5273,1109,2634.5273" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="108" x="1113" y="2618.9102">outputThread</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1109" x2="1109" y1="2681.6035" y2="2735.3379"/><polygon fill="#66696B" points="1105,2725.3379,1109,2735.3379,1113,2725.3379,1109,2729.3379" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="1113" y="2713.7207">callback</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1109" x2="1109" y1="2776.4141" y2="2827.6802"/><polygon fill="#66696B" points="1105,2817.6802,1109,2827.6802,1113,2817.6802,1109,2821.6802" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="27" x="1113" y="2806.063">JNI</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="486" x2="486" y1="2317.4785" y2="2507.6787"/><polygon fill="#FF0000" points="482,2497.6787,486,2507.6787,490,2497.6787,486,2501.6787" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="81" x="490" y="2417.8872">iOS/macOS</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1109" x2="1109" y1="2317.4785" y2="2356.2129"/><polygon fill="#FF0000" points="1105,2346.2129,1109,2356.2129,1113,2346.2129,1109,2350.2129" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1113" y="2342.0957">Android</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1487" x2="1487" y1="2317.4785" y2="2593.1221"/><polygon fill="#FF0000" points="1483,2583.1221,1487,2593.1221,1491,2583.1221,1487,2587.1221" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1491" y="2460.4917">Windows</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1847" x2="1847" y1="2317.4785" y2="2593.1221"/><polygon fill="#FF0000" points="1843,2583.1221,1847,2593.1221,1851,2583.1221,1847,2587.1221" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1851" y="2460.4917">Linux</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="486" x2="486" y1="2719.6416" y2="2907.4907"/><polygon fill="#66696B" points="482,2897.4907,486,2907.4907,490,2897.4907,486,2901.4907" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="490" y="2817.582">callback</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1109" x2="1109" y1="2868.7563" y2="2907.4907"/><polygon fill="#66696B" points="1105,2897.4907,1109,2907.4907,1113,2897.4907,1109,2901.4907" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="1113" y="2893.3735">callback</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1487" x2="1487" y1="2634.1982" y2="2907.4907"/><polygon fill="#66696B" points="1483,2897.4907,1487,2907.4907,1491,2897.4907,1487,2901.4907" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="207" x="1491" y="2777.3286">decoded_image_callback_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1847" x2="1847" y1="2634.1982" y2="2907.4907"/><polygon fill="#66696B" points="1843,2897.4907,1847,2907.4907,1851,2897.4907,1847,2901.4907" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="207" x="1851" y="2777.3286">decoded_image_callback_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="2262.7441" y2="2311.4785"/><polygon fill="#66696B" points="1081,2301.4785,1085,2311.4785,1089,2301.4785,1085,2305.4785" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="72" x="1089" y="2289.9785">decoder_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="2913.4907" y2="2933.4907"/><polygon fill="#66696B" points="1081,2923.4907,1085,2933.4907,1089,2923.4907,1085,2927.4907" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="2974.5669" y2="3023.3013"/><polygon fill="#66696B" points="1081,3013.3013,1085,3023.3013,1089,3013.3013,1085,3017.3013" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="144" x="1089" y="3001.8013">_receiveCallback</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="3064.3774" y2="3113.1118"/><polygon fill="#66696B" points="1081,3103.1118,1085,3113.1118,1089,3103.1118,1085,3107.1118" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="198" x="1089" y="3091.6118">incoming_video_stream_</text><line style="stroke: #66696B; stroke-width: 1.5; stroke-dasharray: 7.0,7.0;" x1="1085" x2="1085" y1="3154.188" y2="3202.9224"/><polygon fill="#66696B" points="1081,3192.9224,1085,3202.9224,1089,3192.9224,1085,3196.9224" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="198" x="1089" y="3181.4224">incoming_render_queue_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="3243.9985" y2="3292.7329"/><polygon fill="#66696B" points="1081,3282.7329,1085,3292.7329,1089,3282.7329,1085,3286.7329" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="81" x="1089" y="3271.2329">callback_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="3333.8091" y2="3382.5435"/><polygon fill="#66696B" points="1081,3372.5435,1085,3382.5435,1089,3372.5435,1085,3376.5435" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="144" x="1089" y="3361.0435">config_.renderer</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="3423.6196" y2="3472.354"/><polygon fill="#66696B" points="1081,3462.354,1085,3472.354,1089,3462.354,1085,3466.354" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1089" y="3450.854">sink_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="534" x2="534" y1="3647.9751" y2="3701.7095"/><polygon fill="#66696B" points="530,3691.7095,534,3701.7095,538,3691.7095,534,3695.7095" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="189" x="538" y="3680.0923">adapter_.videoRenerer</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="900" x2="900" y1="3647.9751" y2="3701.7095"/><polygon fill="#66696B" points="896,3691.7095,900,3701.7095,904,3691.7095,900,3695.7095" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="108" x="904" y="3680.0923">(JNI)j_sink_</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="534" x2="534" y1="3568.1646" y2="3606.8989"/><polygon fill="#FF0000" points="530,3596.8989,534,3606.8989,538,3596.8989,534,3600.8989" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="81" x="538" y="3592.7817">iOS/macOS</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="900" x2="900" y1="3568.1646" y2="3606.8989"/><polygon fill="#FF0000" points="896,3596.8989,900,3606.8989,904,3596.8989,900,3600.8989" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="904" y="3592.7817">Android</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1238" x2="1238" y1="3568.1646" y2="3654.3042"/><polygon fill="#FF0000" points="1234,3644.3042,1238,3654.3042,1242,3644.3042,1238,3648.3042" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="63" x="1242" y="3616.4844">Windows</text><line style="stroke: #FF0000; stroke-width: 1.5;" x1="1611" x2="1611" y1="3568.1646" y2="3654.3042"/><polygon fill="#FF0000" points="1607,3644.3042,1611,3654.3042,1615,3644.3042,1611,3648.3042" style="stroke: #FF0000; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1615" y="3616.4844">Linux</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="534" x2="534" y1="3742.7856" y2="3762.7856"/><polygon fill="#66696B" points="530,3752.7856,534,3762.7856,538,3752.7856,534,3756.7856" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="900" x2="900" y1="3742.7856" y2="3762.7856"/><polygon fill="#66696B" points="896,3752.7856,900,3762.7856,904,3752.7856,900,3756.7856" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1238" x2="1238" y1="3695.3804" y2="3762.7856"/><polygon fill="#66696B" points="1234,3752.7856,1238,3762.7856,1242,3752.7856,1238,3756.7856" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1611" x2="1611" y1="3695.3804" y2="3762.7856"/><polygon fill="#66696B" points="1607,3752.7856,1611,3762.7856,1615,3752.7856,1611,3756.7856" style="stroke: #66696B; stroke-width: 1.0;"/><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="3513.4302" y2="3562.1646"/><polygon fill="#66696B" points="1081,3552.1646,1085,3562.1646,1089,3552.1646,1085,3556.1646" style="stroke: #66696B; stroke-width: 1.0;"/><text fill="#000000" font-family="Consolas" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="45" x="1089" y="3540.6646">sink_</text><line style="stroke: #66696B; stroke-width: 1.5;" x1="1085" x2="1085" y1="3768.7856" y2="3788.7856"/><polygon fill="#66696B" points="1081,3778.7856,1085,3788.7856,1089,3778.7856,1085,3782.7856" style="stroke: #66696B; stroke-width: 1.0;"/><!--MD5=[bc0ec56ab9ed3eeaad4eb486179b7600]
+@startuml
+
+' https://plantuml-documentation.readthedocs.io/en/latest/formatting/all-skin-params.html
+
+' skinparam monochrome true
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+'/'
+skinparam DefaultFontName Consolas
+' skinparam DefaultTextAlignment center
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+    ' FontStyle bold
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+    ' BorderThickness 4
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+   ' BorderColor red
+   ' BackgroundColor Aqua-CadetBlue
+}
+'/
+
+title WebRTC视频数据调用流程
+
+start
+
+fork
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:RTCCameraVideoCapturer captureOutput:didOutputSampleBuffer:fromConnection:]
+->delegate;
+:RTCVideoSource capturer:didCaptureVideoFrame:]
+->_nativeVideoSource;
+:ObjCVideoTrackSource::OnCapturedFrame]
+->super;
+:AdaptedVideoTrackSource::OnFrame]
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:CameraCapturer OnFrameCaptured]
+->capturerObserver;
+:VideoSource$capturerObserver OnFrameCaptured]
+->capturerObserver;
+:NativeAndroidVideoTrackSource OnFrameCaptured]
+->JNI;
+:AndroidVideoTrackSource::OnFrameCaptured]
+->super;
+:AdaptedVideoTrackSource::OnFrame]
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:CaptureInputPin::Receive]
+->filter;
+:CaputreSinkFilter::ProcessCapturedFrame]
+->capture_observer_;
+:VideoCaptureImpl::IncomingFrame]
+:VideoCaptureImpl::DeliverCapturedFrame]
+->_dataCallBack;
+:VcmCapturer::OnFrame]
+->super;
+:TestVideoCapturer::OnFrame]
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:VideoCaptureModuleV4L2::CaptureProcess]
+->super;
+:VideoCaptureImpl::IncomingFrame]
+:VideoCaptureImpl::DeliverCapturedFrame]
+->_dataCallBack;
+:VcmCapturer::OnFrame]
+->super;
+:TestVideoCapturer::OnFrame]
+' stop Linux
+end fork
+
+
+->broadcaster_;
+:VideoBroadcaster::OnFrame]
+->sink_;
+:VideoStreamEncoder::OnFrame]
+-[dashed]->encoder_queue_;
+:VideoStreamEncoder::EncodeVideoFrame]
+->encoder_;
+
+
+fork 
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:RTCVideoEncoderH264 encode:codecSpecificInfo:frameTypes:]
+-[dashed]->;
+:RTCVideoEncoderH264 frameWasEncoded:flags:sampleBuffer:
+codecSpecificInfo:width:height:renderTimeMs:timestamp:rotation:]
+->callback_;
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:VideoEncoderWrapper::Encode]
+->(JNI)encoder_;
+:HardwareVideoEncoder encode]
+-[dashed]->outputThread;
+:HardwareVideoEncoder deliverEncodedImage]
+->callback;
+:VideoEncoderWrapper nativeOnEncodedFrame]
+->JNI;
+:VideoEncoderWrapper::OnEncodedFrame]
+-[dashed]->encoder_queue_+callback_;
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:EncoderSimulcastProxy::Encode]
+->encoder_;
+:H264EncoderImpl::Encode]
+->encoded_image_callback_;
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:EncoderSimulcastProxy::Encode]
+->encoder_;
+:H264EncoderImpl::Encode]
+' stop Linux
+end fork
+
+
+:VideoStreamEncoder::OnEncodedImage]
+->sink_;
+:VideoSendStreamImpl::OonEncodedImage]
+->rtp_video_sender_;
+:RtpVideoSender::OnEncodedImage]
+->发送;
+#AAAAAA:RTP & Network layer]
+->接收;
+:RtpVideoStreamReceiver::OnCompleteFrame]
+->complete_frame_callback_;
+:VideoReceiveStream::OnCompleteFrame]
+-[dashed]->decode_queue_;
+:VideoReceiveStream::HandleEncodedFrame]
+->video_receiver_;
+:VideoReceiver2::Decode]
+->decoder;
+:VCMGenericDecoder::Decode]
+->decoder_;
+
+
+fork
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:ObjCVideoDecoder:Decode]
+->decoder_;
+:RTCVideoDecoderH264 decode:missingFrames:codecSpecificInfo:renderTimeMs:]
+-[dashed]->;
+:decompressionOutputCallback]
+->callback;
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:VideoDecoderSoftwareFallbackWrapper::Decode]
+->hw_decoder_;
+:VideoDecoderWrapper::Decode]
+->(JNI)decoder_;
+:AndroidVideoDecoder decode]
+-[dashed]->outputThread;
+:AndroidVideoDecoder deliverDecodedFrame]
+->callback;
+:VideoDecoderWrapper nativeOnDecodedFrame]
+->JNI;
+:VideoDecoderWrapper::OnDecodedFrame]
+->callback;
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:H264DecoderImpl::Decode]
+->decoded_image_callback_;
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:H264DecoderImpl::Decode]
+->decoded_image_callback_;
+' stop Linux
+end fork
+
+
+
+:VCMDecodedFrameCallback::Decoded]
+->_receiveCallback;
+:VideoStreamDecoder::FrameToRender]
+->incoming_video_stream_;
+:IncomingVideoStream::OnFrame]
+-[dashed]->incoming_render_queue_;
+:IncomingVideoStream::Dequeue]
+->callback_;
+:VideoReceiveStream::OnFrame]
+->config_.renderer;
+:WebRtcVideoChannel::WebRtcVideoReceiveStream::OnFrame]
+->sink_;
+:VideoBroadcaster::OnFrame]
+->sink_;
+
+
+fork
+' start iOS/macOS
+-[#red]->iOS/macOS;
+:VideoRendererAdapter::OnFrame]
+->adapter_.videoRenerer;
+:RTCMTLVideoView renderFrame:]
+' stop iOS/macOS
+fork again
+' start Android
+-[#red]->Android;
+:VideoSinkWrapper::OnFrame]
+->(JNI)j_sink_;
+:SurfaceViewRenderer OnFrame]
+' stop Android
+fork again
+' start Windows
+-[#red]->Windows;
+:MAinWnd::VideoRenderer::OnFrame]
+' stop Windows
+fork again
+' start Linux
+-[#red]->Linux;
+:GtkMainWnd::VideoRenderer::OnFrame]
+' stop Linux
+end fork
+
+stop
+
+@enduml
+
+@startuml
+
+
+skinparam DefaultFontName Consolas
+skinparam DefaultFontSize 16
+skinparam shadowing false
+
+skinparam Activity {
+    StartColor black
+    EndColor red
+    ArrowColor #66696b
+    BorderColor #66696b
+
+    BackgroundColor #FFFFFF
+    BorderThickness 2
+    FontName Consolas
+    FontSize 18
+}
+
+skinparam Note {
+    BorderColor #66696b
+    BackgroundColor #FFFFFF
+    FontName Consolas
+    FontSize 16
+    FontColor #555555
+}
+
+skinparam Partition {
+    BorderColor #bac0c1
+    FontColor #555555
+}
+
+skinparam title {
+   FontSize 24
+   BorderRoundCorner 10
+   BorderThickness 1
+}
+
+title WebRTC视频数据调用流程
+
+start
+
+fork
+-[#red]->iOS/macOS;
+:RTCCameraVideoCapturer captureOutput:didOutputSampleBuffer:fromConnection:]
+->delegate;
+:RTCVideoSource capturer:didCaptureVideoFrame:]
+->_nativeVideoSource;
+:ObjCVideoTrackSource::OnCapturedFrame]
+->super;
+:AdaptedVideoTrackSource::OnFrame]
+fork again
+-[#red]->Android;
+:CameraCapturer OnFrameCaptured]
+->capturerObserver;
+:VideoSource$capturerObserver OnFrameCaptured]
+->capturerObserver;
+:NativeAndroidVideoTrackSource OnFrameCaptured]
+->JNI;
+:AndroidVideoTrackSource::OnFrameCaptured]
+->super;
+:AdaptedVideoTrackSource::OnFrame]
+fork again
+-[#red]->Windows;
+:CaptureInputPin::Receive]
+->filter;
+:CaputreSinkFilter::ProcessCapturedFrame]
+->capture_observer_;
+:VideoCaptureImpl::IncomingFrame]
+:VideoCaptureImpl::DeliverCapturedFrame]
+->_dataCallBack;
+:VcmCapturer::OnFrame]
+->super;
+:TestVideoCapturer::OnFrame]
+fork again
+-[#red]->Linux;
+:VideoCaptureModuleV4L2::CaptureProcess]
+->super;
+:VideoCaptureImpl::IncomingFrame]
+:VideoCaptureImpl::DeliverCapturedFrame]
+->_dataCallBack;
+:VcmCapturer::OnFrame]
+->super;
+:TestVideoCapturer::OnFrame]
+end fork
+
+
+->broadcaster_;
+:VideoBroadcaster::OnFrame]
+->sink_;
+:VideoStreamEncoder::OnFrame]
+-[dashed]->encoder_queue_;
+:VideoStreamEncoder::EncodeVideoFrame]
+->encoder_;
+
+
+fork 
+-[#red]->iOS/macOS;
+:RTCVideoEncoderH264 encode:codecSpecificInfo:frameTypes:]
+-[dashed]->;
+:RTCVideoEncoderH264 frameWasEncoded:flags:sampleBuffer:
+codecSpecificInfo:width:height:renderTimeMs:timestamp:rotation:]
+->callback_;
+fork again
+-[#red]->Android;
+:VideoEncoderWrapper::Encode]
+->(JNI)encoder_;
+:HardwareVideoEncoder encode]
+-[dashed]->outputThread;
+:HardwareVideoEncoder deliverEncodedImage]
+->callback;
+:VideoEncoderWrapper nativeOnEncodedFrame]
+->JNI;
+:VideoEncoderWrapper::OnEncodedFrame]
+-[dashed]->encoder_queue_+callback_;
+fork again
+-[#red]->Windows;
+:EncoderSimulcastProxy::Encode]
+->encoder_;
+:H264EncoderImpl::Encode]
+->encoded_image_callback_;
+fork again
+-[#red]->Linux;
+:EncoderSimulcastProxy::Encode]
+->encoder_;
+:H264EncoderImpl::Encode]
+end fork
+
+
+:VideoStreamEncoder::OnEncodedImage]
+->sink_;
+:VideoSendStreamImpl::OonEncodedImage]
+->rtp_video_sender_;
+:RtpVideoSender::OnEncodedImage]
+->发送;
+#AAAAAA:RTP & Network layer]
+->接收;
+:RtpVideoStreamReceiver::OnCompleteFrame]
+->complete_frame_callback_;
+:VideoReceiveStream::OnCompleteFrame]
+-[dashed]->decode_queue_;
+:VideoReceiveStream::HandleEncodedFrame]
+->video_receiver_;
+:VideoReceiver2::Decode]
+->decoder;
+:VCMGenericDecoder::Decode]
+->decoder_;
+
+
+fork
+-[#red]->iOS/macOS;
+:ObjCVideoDecoder:Decode]
+->decoder_;
+:RTCVideoDecoderH264 decode:missingFrames:codecSpecificInfo:renderTimeMs:]
+-[dashed]->;
+:decompressionOutputCallback]
+->callback;
+fork again
+-[#red]->Android;
+:VideoDecoderSoftwareFallbackWrapper::Decode]
+->hw_decoder_;
+:VideoDecoderWrapper::Decode]
+->(JNI)decoder_;
+:AndroidVideoDecoder decode]
+-[dashed]->outputThread;
+:AndroidVideoDecoder deliverDecodedFrame]
+->callback;
+:VideoDecoderWrapper nativeOnDecodedFrame]
+->JNI;
+:VideoDecoderWrapper::OnDecodedFrame]
+->callback;
+fork again
+-[#red]->Windows;
+:H264DecoderImpl::Decode]
+->decoded_image_callback_;
+fork again
+-[#red]->Linux;
+:H264DecoderImpl::Decode]
+->decoded_image_callback_;
+end fork
+
+
+
+:VCMDecodedFrameCallback::Decoded]
+->_receiveCallback;
+:VideoStreamDecoder::FrameToRender]
+->incoming_video_stream_;
+:IncomingVideoStream::OnFrame]
+-[dashed]->incoming_render_queue_;
+:IncomingVideoStream::Dequeue]
+->callback_;
+:VideoReceiveStream::OnFrame]
+->config_.renderer;
+:WebRtcVideoChannel::WebRtcVideoReceiveStream::OnFrame]
+->sink_;
+:VideoBroadcaster::OnFrame]
+->sink_;
+
+
+fork
+-[#red]->iOS/macOS;
+:VideoRendererAdapter::OnFrame]
+->adapter_.videoRenerer;
+:RTCMTLVideoView renderFrame:]
+fork again
+-[#red]->Android;
+:VideoSinkWrapper::OnFrame]
+->(JNI)j_sink_;
+:SurfaceViewRenderer OnFrame]
+fork again
+-[#red]->Windows;
+:MAinWnd::VideoRenderer::OnFrame]
+fork again
+-[#red]->Linux;
+:GtkMainWnd::VideoRenderer::OnFrame]
+end fork
+
+stop
+
+@enduml
+
+PlantUML version 1.2020.18(Thu Oct 01 03:40:44 CST 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: zh
+Country: CN
+--></g></svg>
