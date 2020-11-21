@@ -118,7 +118,7 @@ end fork
 ->this;
 :AudioEncoderOpusImpl::EncodeImpl]
 fork
-#bac0c1:WebRtcOus_Encode]
+#bac0c1:WebRtcOpus_Encode]
 end fork
 :AudioCodingModuleImpl::Encode]
 ->packetizarion_callback_;
